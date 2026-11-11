@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI CLUB ｜ 11月生活儀式感・命定盲盒與實戰錦囊</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+      background: linear-gradient(165deg, #7c3aed 0%, #a855f7 35%, #e9d5ff 70%, #fef3c7 100%);
+      min-height: 100vh;
+      color: #0f172a;
+    }
+    .sunlight-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.25);
+    }
+    .quiz-option {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .quiz-option:hover {
+      transform: translateY(-2px);
+      border-color: #7c3aed;
+      background: #faf5ff;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(1deg); }
+    }
+    .floating-box {
+      animation: float 3.5s ease-in-out infinite;
+    }
+    .tab-btn.active {
+      background: linear-gradient(90deg, #7c3aed, #9333ea);
+      color: #ffffff;
+      border-color: transparent;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center p-3 sm:p-6 md:p-8">
+
+  <main class="w-full max-w-2xl mx-auto sunlight-card rounded-3xl overflow-hidden relative my-4">
+    
+    <div class="absolute -top-20 -left-20 w-56 h-56 bg-purple-300/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-20 -right-20 w-56 h-56 bg-amber-300/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="p-5 sm:p-8 space-y-5 relative z-10">
+
+      <!-- Header 標題區 (聚焦 11/20 專講強效引流) -->
+      <header class="text-center mb-2">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase bg-purple-100 text-purple-800 border border-purple-300 mb-2">
+          <span>🎁</span> AI Club ‧ 11月強檔主題專講
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+          AI 生活儀式感 ‧ 命定盲盒
+        </h1>
+        <p class="text-slate-600 text-xs sm:text-sm mt-1">
+          11/20 (五) 15:30 開講 ‧ 3 題解鎖過節 DNA ＆ 搶先登記報名黃揚博老師專講
+        </p>
+        <div id="batchBadge" class="mt-2 inline-block text-[11px] px-2.5 py-0.5 rounded-md bg-purple-50 text-purple-700 border border-purple-200 font-medium">
+          識別載入中...
+        </div>
+      </header>
+
+      <!-- SECTION 1: 測驗首頁與身分判定 -->
+      <section id="screenIntro" class="text-center space-y-5">
+        
+        <div class="floating-box my-1">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-2xl bg-gradient-to-tr from-purple-500 via-pink-400 to-amber-300 p-1 shadow-md shadow-purple-400/25 flex items-center justify-center">
+            <div class="w-full h-full bg-white rounded-[14px] flex items-center justify-center text-3xl sm:text-4xl shadow-inner">
+              ✨
+            </div>
+          </div>
+        </div>
+        
+        <!-- 學習亮點整理卡 -->
+        <div class="bg-purple-50/70 rounded-2xl p-4 border border-purple-100 text-slate-700 text-xs sm:text-sm leading-relaxed text-left space-y-2">
+          <p class="flex items-center gap-2 font-bold text-purple-950 text-sm">
+            <span>✨</span> 11/20 專講必看亮點 ＆ 盲盒解鎖內容：
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="bg-white p-2.5 rounded-xl border border-purple-100 shadow-sm">
+              <span class="font-bold text-purple-700">① 過節 DNA 解析</span>
+              <p class="text-slate-500 mt-0.5">洞察歲末生活企劃型態與盲點</p>
+            </div>
+            <div class="bg-white p-2.5 rounded-xl border border-purple-100 shadow-sm">
+              <span class="font-bold text-amber-600">② 3 組課前私房咒語</span>
+              <p class="text-slate-500 mt-0.5">派對策劃、水彩生圖、感人祝詞</p>
+            </div>
+            <div class="bg-white p-2.5 rounded-xl border border-purple-100 shadow-sm">
+              <span class="font-bold text-indigo-600">③ 提示詞四要素實戰</span>
+              <p class="text-slate-500 mt-0.5">零基礎拆解角色/任務/條件/格式</p>
+            </div>
+            <div class="bg-white p-2.5 rounded-xl border border-purple-100 shadow-sm">
+              <span class="font-bold text-emerald-600">④ 智造號召王爭霸</span>
+              <p class="text-slate-500 mt-0.5">揪團上線前三名獨享 500 元禮券</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 模式 A：自動帶入（0 輸入通行） -->
+        <div id="autoIdentifiedBox" class="hidden bg-emerald-50 p-4 rounded-2xl border border-emerald-300 text-left space-y-1.5 shadow-sm">
+          <div class="flex items-center justify-between text-xs font-bold text-emerald-800">
+            <span class="flex items-center gap-1.5">
+              <span>🎫</span> 研習身分已由信件自動就緒
+            </span>
+            <span class="text-[10px] bg-emerald-200/60 text-emerald-900 px-2 py-0.5 rounded-md border border-emerald-400">免手動輸入</span>
+          </div>
+          <p class="text-slate-900 text-sm font-bold flex items-center gap-2" id="autoEmpIdDisplay">
+            持有人：載入中...
+          </p>
+          <p class="text-[11px] text-slate-600">
+            系統已綁定您的專屬研習身分，完成 3 題即可解鎖專屬盲盒並快速卡位 11/20 專講！
+          </p>
+        </div>
+
+        <!-- 模式 B：手動輸入備援 -->
+        <div id="manualInputBox" class="bg-white p-3.5 rounded-2xl border border-purple-200 shadow-sm space-y-2 text-left">
+          <label for="inputEmpId" class="block text-xs font-bold text-purple-900 flex items-center justify-between">
+            <span>🎟️ 請輸入姓名、工號或公司英文帳號：</span>
+            <span id="savedTag" class="hidden text-[10px] text-emerald-600 font-normal">已自動記住</span>
+          </label>
+          <input 
+            type="text" 
+            id="inputEmpId" 
+            placeholder="例如：王大明 或 ming.wang（不需填 @yfy.com）" 
+            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:border-purple-500 focus:bg-white transition"
+          />
+          <div class="space-y-1 text-[11px] pt-0.5">
+            <div class="flex items-center justify-between text-slate-500">
+              <span>※ 英文帳號填寫信箱前綴即可（例如 ming.wang@yfy.com 請填 ming.wang）</span>
+              <span id="idError" class="hidden text-rose-600 font-bold">請填寫姓名、工號或帳號！</span>
+            </div>
+            <div class="text-slate-400 text-[10px]">
+              ※ 用於客製盲盒卡與 11/20 專講出席抽獎紀錄核對
+            </div>
+          </div>
+        </div>
+
+        <button id="btnStart" class="w-full py-3.5 px-6 rounded-2xl font-black text-base text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-800 hover:opacity-95 shadow-lg shadow-purple-500/25 transition duration-200">
+          解鎖命定盲盒 ＆ 領取專屬錦囊（約 30 秒）👉
+        </button>
+      </section>
+
+      <!-- SECTION 2: 測驗題目頁 -->
+      <section id="screenQuiz" class="hidden space-y-5">
+        <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+          <div id="progressBar" class="bg-gradient-to-r from-purple-500 to-indigo-600 h-2 rounded-full transition-all duration-300" style="width: 33%"></div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-purple-800 font-bold">
+          <span id="questionStep">QUESTION 1 / 3</span>
+          <span>AI 過節體質演算中...</span>
+        </div>
+
+        <div class="bg-purple-50/80 rounded-2xl p-4 sm:p-5 border border-purple-100 shadow-sm">
+          <h2 id="questionText" class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+            題目載入中...
+          </h2>
+        </div>
+
+        <div class="space-y-3" id="optionsContainer"></div>
+      </section>
+
+      <!-- SECTION 3: 測驗結果與深度學習錦囊頁 -->
+      <section id="screenResult" class="hidden space-y-5">
+        
+        <div class="bg-gradient-to-b from-purple-50 to-white border border-purple-200 rounded-2xl p-5 sm:p-6 text-center space-y-3 relative overflow-hidden shadow-sm">
+          <div class="text-5xl my-1" id="resEmoji">🎉</div>
+          
+          <div class="inline-block text-xs font-black uppercase tracking-wider text-purple-800 bg-purple-100 px-3 py-1 rounded-full border border-purple-300" id="resTag">
+            過節 DNA 解析
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900" id="resTitle">
+            派對主理人 ‧ 氣氛引爆者
+          </h2>
+
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed text-left bg-white p-3.5 rounded-xl border border-purple-100 shadow-inner" id="resDesc">
+            性格描述載入中...
+          </p>
+
+          <div class="flex flex-wrap items-center justify-between text-[11px] text-purple-800 pt-1 border-t border-purple-100">
+            <span id="resOwnerBadge">報告持有人：-</span>
+            <span class="text-slate-500">認證：YFY AI CLUB 11月研習</span>
+          </div>
+        </div>
+
+        <!-- 三大實戰錦囊 -->
+        <div class="bg-white border border-purple-200 rounded-2xl p-4 sm:p-5 text-left space-y-3 shadow-sm">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+            <div class="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-purple-900">
+              <span>🪄</span> 黃揚博老師專屬隨身提詞庫（點擊一鍵複製）
+            </div>
+            <button id="btnCopyPrompt" class="text-xs bg-purple-600 hover:bg-purple-500 text-white px-3 py-1.5 rounded-lg transition duration-150 flex items-center gap-1 shadow-sm font-bold">
+              <span>📋</span> <span id="copyBtnText">一鍵複製當前咒語</span>
+            </button>
+          </div>
+
+          <div class="flex gap-2">
+            <button onclick="switchTab(0)" id="tab0" class="tab-btn active text-xs px-3 py-1.5 rounded-lg border border-slate-200 transition">
+              ① 派對活動企劃
+            </button>
+            <button onclick="switchTab(1)" id="tab1" class="tab-btn text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 transition">
+              ② 溫度賀卡生圖
+            </button>
+            <button onclick="switchTab(2)" id="tab2" class="tab-btn text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 transition">
+              ③ 得體祝詞潤飾
+            </button>
+          </div>
+
+          <div class="relative">
+            <div class="text-[11px] text-purple-700 font-bold mb-1" id="tabSubtitle">
+              【技法說明】：掌握「角色、任務、條件、格式」結構化指令，產出精準活動流程
+            </div>
+            <pre class="text-xs text-slate-800 leading-relaxed font-mono bg-slate-50 p-3 rounded-xl border border-slate-200 whitespace-pre-wrap break-words" id="resPromptBox">
+載入中...
+            </pre>
+          </div>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-[11px] text-amber-950 space-y-1">
+            <div class="font-bold flex items-center gap-1 text-amber-800">
+              <span>💡</span> 黃揚博老師課堂私房秘訣：
+            </div>
+            <p id="resProTip">
+              「提詞時務必設定明確的角色定位與字數限制，並要求 AI 輸出表格欄位，能省去 90% 的人工重複修改排版時間！」
+            </p>
+          </div>
+        </div>
+
+        <!-- 專講報名主要行動按鈕 -->
+        <div class="space-y-2.5 pt-1">
+          <a id="btnRegistrationLink" href="https://forms.gle/JLWoUahV66WyCRcw9" target="_blank" class="block w-full text-center py-3.5 px-5 rounded-2xl font-black text-sm text-white bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:opacity-90 shadow-lg shadow-orange-500/25 transition">
+            🎟️ 立即登記報名 11/20 (五) 黃揚博老師專講 ＆ 搶限量禮物卡 ↗
+          </a>
+          <a id="btnReplayLink" href="https://lms.yfy.com/eHRD/" target="_blank" class="block w-full text-center py-2.5 px-4 rounded-xl font-medium text-xs text-purple-800 bg-purple-100 hover:bg-purple-200 border border-purple-200 transition">
+            📺 前往 LMS 觀看過往主題回放與先修課程 ↗
+          </a>
+        </div>
+
+        <button id="btnRestart" class="w-full text-center py-2 text-xs text-slate-500 hover:text-slate-800 transition">
+          🔄 重新測驗換個玩法
+        </button>
+
+      </section>
+
+      <footer class="mt-6 pt-4 border-t border-slate-200 text-center text-[11px] text-slate-500">
+        AI CLUB 智造所 ‧ 探索生活無限可能 ‧ 人資訓練培育組
+      </footer>
+
+    </div>
+
+  </main>
+
+  <script>
+    const CONFIG = {
+      GAS_ENDPOINT_URL: "https://script.google.com/macros/s/AKfycbw5qnLfoRebzDEdkuAEnGtEBFdMK7LtLtJc4kiFLF4ewzwUV2LnAjxohwBzej8ao_5g/exec",
+      REGISTRATION_FORM_URL: "https://forms.gle/JLWoUahV66WyCRcw9",
+      LMS_REPLAY_URL: "https://lms.yfy.com/eHRD/"
+    };
+
+    // 取得網址列參數
+    const urlParams = new URLSearchParams(window.location.search);
+    const rawUser = urlParams.get('user') || urlParams.get('id') || urlParams.get('emp_id') || "";
+    const rawName = urlParams.get('name') || urlParams.get('cname') || "";
+    const currentBatch = urlParams.get('batch') || "1116_nov_quiz";
+    const currentTopic = urlParams.get('topic') || "11月過節DNA盲盒測驗";
+
+    document.getElementById('batchBadge').innerText = `梯次：${currentBatch}`;
+    document.getElementById('btnRegistrationLink').href = CONFIG.REGISTRATION_FORM_URL;
+    document.getElementById('btnReplayLink').href = CONFIG.LMS_REPLAY_URL;
+
+    const autoIdentifiedBox = document.getElementById('autoIdentifiedBox');
+    const manualInputBox = document.getElementById('manualInputBox');
+    const autoEmpIdDisplay = document.getElementById('autoEmpIdDisplay');
+    const inputEmpId = document.getElementById('inputEmpId');
+
+    let activeEmpId = rawUser.trim();
+    let activeEmpName = "";
+    if (rawName) {
+      try { activeEmpName = decodeURIComponent(rawName).trim(); } catch(e) { activeEmpName = rawName.trim(); }
+    }
+
+    if (activeEmpName) {
+      autoIdentifiedBox.classList.remove('hidden');
+      manualInputBox.classList.add('hidden');
+      autoEmpIdDisplay.innerHTML = `持有人：<span class="text-purple-700 font-black text-base">${activeEmpName}</span>`;
+    } else if (activeEmpId) {
+      autoIdentifiedBox.classList.remove('hidden');
+      manualInputBox.classList.add('hidden');
+      autoEmpIdDisplay.innerHTML = `持有人：<span class="text-purple-700 font-black text-base">${activeEmpId}</span>`;
+    }
+
+    function getDisplayName() {
+      if (activeEmpName) return activeEmpName;
+      if (activeEmpId) return activeEmpId;
+      return "研習同仁夥伴";
+    }
+
+    function logToGoogleSheet(actionEvent, detail) {
+      if (!CONFIG.GAS_ENDPOINT_URL) return;
+      const trackingUrl = `${CONFIG.GAS_ENDPOINT_URL}?batch=${encodeURIComponent(currentBatch)}&topic=${encodeURIComponent(currentTopic)}&action=${encodeURIComponent(actionEvent)}&detail=${encodeURIComponent(detail)}&user=${encodeURIComponent(activeEmpId || "訪客")}&name=${encodeURIComponent(activeEmpName || "")}`;
+      try { fetch(trackingUrl, { mode: 'no-cors' }); } catch (err) { const img = new Image(); img.src = trackingUrl; }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => { 
+      logToGoogleSheet("開啟11月測驗頁面", "點擊電子報進入"); 
+    });
+
+    const quizQuestions = [
+      {
+        question: "1. 當部門同事提議今年歲末舉辦交換禮物時，你的第一個直覺反應是？",
+        options: [
+          { label: "A. 腦洞大開！想規劃超有梗的派對主題、地獄禮物規則與破冰抽獎", type: "PLANNER" },
+          { label: "B. 精心準備手作質感小物與溫度卡片，把最真誠的心意傳遞給夥伴", type: "CRAFTER" }
+        ]
+      },
+      {
+        question: "2. 當你提筆準備寫卡片感謝照顧你的主管或客戶時，最常卡的痛點是？",
+        options: [
+          { label: "A. 買現成賀卡覺得太普通，又不想發老派長輩圖，缺乏視覺驚喜感", type: "CRAFTER" },
+          { label: "B. 提筆就忘字，詞窮寫不出真誠得體又觸動人心的客製化文案", type: "PLANNER" }
+        ]
+      },
+      {
+        question: "3. 對你而言，年底最具療癒感的「生活儀式感」是？",
+        options: [
+          { label: "A. 召集大家熱鬧聚在一起，從開場、互動到合照一氣呵成充滿回憶", type: "PLANNER" },
+          { label: "B. 在安靜的夜晚，給自己與最重要的人打造一份獨一無二的客製化祝福", type: "CRAFTER" }
+        ]
+      }
+    ];
+
+    const quizPersonas = {
+      PLANNER: {
+        emoji: "🎉",
+        title: "派對主理人 ‧ 氣氛引爆者",
+        tag: "節慶企劃型",
+        desc: "你是團隊中不可或缺的歡樂製造機！你擅長活動節奏、互動機制與破冰遊戲。11/20 黃揚博老師將教你如何運用 AI 提示詞四要素，5 分鐘生成超好玩的歲末活動全攻略！",
+        protip: "課堂秘訣：運用『角色設定 + 條列式規則 + 表格輸出』結構，AI 給出的活動流程比公關公司還專業！",
+        prompts: [
+          {
+            title: "【技法① 派對企劃】",
+            subtitle: "結構化生成 1.5 小時交換禮物流程表",
+            text: "「請擔任專業公關活動企劃。任務：為一場辦公室歲末聖誕交換禮物派對進行完整企劃。\n條件：共【人數】人參加，預算每人【金額】元內，時間 1.5 小時。\n格式：請以 Markdown 表格輸出：[流程階段]、[時間分配]、[活動內容/破冰遊戲]、[主持台詞梗]、[道具物料清單]，並設計 1 個新穎有趣的防踩雷交換禮物規則。」"
+          },
+          {
+            title: "【技法② 邀請函撰寫】",
+            subtitle: "幽默吸睛的團隊活動召集令",
+            text: "「請以充滿活力且幽默的語氣，為部門歲末聚餐活動寫一則【150 字】的 Email 活動通知與 Slack 宣傳文案。內容需包含活動主題『告別社畜，溫暖跨年』，強調人人有獎，並附上時間、地點與報名截止倒數提醒。」"
+          },
+          {
+            title: "【技法③ 暖場互動題目】",
+            subtitle: "生成不尷尬的團隊破冰問答庫",
+            text: "「請為企業年終聚會設計 5 個能讓新舊同仁迅速破冰且不涉及隱私的趣味問答題（例如：今年在公司最意想不到的爆笑瞬間）。請列出題目與主持人的延伸引導台詞。」"
+          }
+        ]
+      },
+      CRAFTER: {
+        emoji: "💌",
+        title: "溫暖手作派 ‧ 專屬心意製造機",
+        tag: "溫度傳遞型",
+        desc: "你深信最珍貴的禮物是用心！你注重美感、細節與情感的深度傳遞。11/20 專講將教你掌握『AI 生圖四要素』，輕鬆繪製專屬水彩/吉卜力風賀卡並搭配暖心祝福！",
+        protip: "課堂秘訣：生圖提示詞加上『吉卜力水彩手繪風、柔和暖光、16:9』，生成的賀卡畫面質感驚艷又溫馨！",
+        prompts: [
+          {
+            title: "【技法① 賀卡生圖】",
+            subtitle: "四要素精準生成水彩吉卜力風封面",
+            text: "「請幫我生成一張溫馨聖誕與新年祝福賀卡背景圖。\n[主體]：一隻戴著紅圍巾的可愛黃金獵犬坐在溫暖壁爐旁，周圍有閃爍的聖誕樹與禮物盒\n[風格]：吉卜力動畫水彩手繪風，筆觸細膩，富有童話質感\n[光影與氛圍]：柔和溫暖的午後暖光，營造安寧、療癒、幸福的節慶氛圍\n[構圖比例]：16:9 橫版，中央上方留有乾淨留白供排版文字」"
+          },
+          {
+            title: "【技法② 祝福文案潤飾】",
+            subtitle: "針對長輩/客戶/同仁三版本客製祝福",
+            text: "「請為歲末感謝卡撰寫 3 種不同語氣的祝詞（各 80 字以內）：\n1.【致敬重的主管/長輩】：得體、真誠感謝這一年來的提攜與指導。\n2.【致親密同仁夥伴】：幽默感人、感謝一起並肩作戰的默契。\n3.【致重要客戶】：專業優雅、回顧合作成果並展望新年度。」"
+          },
+          {
+            title: "【技法③ 數位小卡排版】",
+            subtitle: "手帳風格排版金句生成",
+            text: "「請以『在歲末的微光裡，謝謝有你的相伴』為主題，提煉出 1 句 15 字內的封面燙金手寫字標題，以及 3 行富有文青質感的感恩短詩。」"
+          }
+        ]
+      }
+    };
+
+    let currentStep = 0;
+    let scores = { PLANNER: 0, CRAFTER: 0 };
+    let activePersonaKey = "PLANNER";
+    let activeTabIndex = 0;
+
+    const screenIntro = document.getElementById('screenIntro');
+    const screenQuiz = document.getElementById('screenQuiz');
+    const screenResult = document.getElementById('screenResult');
+
+    document.getElementById('btnStart').addEventListener('click', () => {
+      if (!activeEmpName && !activeEmpId) {
+        const val = inputEmpId.value.trim();
+        if (!val) {
+          document.getElementById('idError').classList.remove('hidden');
+          return;
+        }
+        document.getElementById('idError').classList.add('hidden');
+        if (/^\d+$/.test(val)) { activeEmpId = val; } else { activeEmpName = val; }
+      }
+      logToGoogleSheet("開始測驗", "同仁啟動11月盲盒測驗");
+      screenIntro.classList.add('hidden');
+      screenQuiz.classList.remove('hidden');
+      renderQuestion();
+    });
+
+    function renderQuestion() {
+      const q = quizQuestions[currentStep];
+      document.getElementById('questionStep').innerText = `QUESTION ${currentStep + 1} / ${quizQuestions.length}`;
+      document.getElementById('questionText').innerText = q.question;
+      document.getElementById('progressBar').style.width = `${((currentStep + 1) / quizQuestions.length) * 100}%`;
+
+      const container = document.getElementById('optionsContainer');
+      container.innerHTML = "";
+
+      q.options.forEach((opt) => {
+        const btn = document.createElement('button');
+        btn.className = "quiz-option w-full text-left p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 text-slate-800 text-xs sm:text-sm font-medium hover:text-purple-700 flex items-center justify-between shadow-sm";
+        btn.innerHTML = `<span>${opt.label}</span><span class="text-purple-500 font-bold ml-2">→</span>`;
+        btn.onclick = () => selectOption(opt.type);
+        container.appendChild(btn);
+      });
+    }
+
+    function selectOption(type) {
+      scores[type] = (scores[type] || 0) + 1;
+      currentStep++;
+      if (currentStep < quizQuestions.length) {
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      screenQuiz.classList.add('hidden');
+      screenResult.classList.remove('hidden');
+
+      activePersonaKey = scores.PLANNER >= scores.CRAFTER ? "PLANNER" : "CRAFTER";
+      const res = quizPersonas[activePersonaKey];
+
+      document.getElementById('resEmoji').innerText = res.emoji;
+      document.getElementById('resTag').innerText = res.tag;
+      document.getElementById('resTitle').innerText = res.title;
+      document.getElementById('resDesc').innerText = res.desc;
+      document.getElementById('resProTip').innerText = res.protip;
+      document.getElementById('resOwnerBadge').innerText = `報告持有人：${getDisplayName()}`;
+
+      switchTab(0);
+      try { confetti({ particleCount: 70, spread: 80, origin: { y: 0.6 } }); } catch (e) {}
+      logToGoogleSheet("完成11月測驗解鎖盲盒", res.title);
+    }
+
+    window.switchTab = function(index) {
+      activeTabIndex = index;
+      const persona = quizPersonas[activePersonaKey];
+      const promptObj = persona.prompts[index];
+
+      [0, 1, 2].forEach(i => {
+        const btn = document.getElementById(`tab${i}`);
+        if (i === index) {
+          btn.classList.add('active');
+          btn.classList.remove('text-slate-600');
+        } else {
+          btn.classList.remove('active');
+          btn.classList.add('text-slate-600');
+        }
+      });
+
+      document.getElementById('tabSubtitle').innerText = `${promptObj.title} ${promptObj.subtitle}`;
+      document.getElementById('resPromptBox').innerText = promptObj.text;
+    };
+
+    document.getElementById('btnCopyPrompt').addEventListener('click', () => {
+      const text = document.getElementById('resPromptBox').innerText;
+      const copyArea = document.createElement('textarea');
+      copyArea.value = text;
+      document.body.appendChild(copyArea);
+      copyArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(copyArea);
+
+      const btnText = document.getElementById('copyBtnText');
+      btnText.innerText = "已複製當前咒語！";
+      setTimeout(() => { btnText.innerText = "一鍵複製當前咒語"; }, 2000);
+      logToGoogleSheet("複製AI咒語", `11月盲盒 - 錦囊${activeTabIndex + 1}`);
+    });
+
+    document.getElementById('btnRegistrationLink').addEventListener('click', () => {
+      logToGoogleSheet("點擊專講報名按鈕", "前往報名11/20專講");
+    });
+
+    document.getElementById('btnRestart').addEventListener('click', () => {
+      currentStep = 0;
+      scores = { PLANNER: 0, CRAFTER: 0 };
+      screenResult.classList.add('hidden');
+      screenQuiz.classList.remove('hidden');
+      renderQuestion();
+    });
+  </script>
+</body>
+</html>
